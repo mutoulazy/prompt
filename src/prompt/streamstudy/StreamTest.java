@@ -11,11 +11,12 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * Stream的基本用法
- * 参考 https://mrbird.cc/java8stream1.html
+ * Stream的基本用法 参考 https://mrbird.cc/java8stream1.html
  */
 public class StreamTest {
-  public static List<String> list = Arrays.asList("Java", "JavaScript", "python", "PHP", "C#", "Golang", "Swift");
+
+  public static List<String> list = Arrays
+      .asList("Java", "JavaScript", "python", "PHP", "C#", "Golang", "Swift");
 
   public static void main(String[] args) {
     // oldHandle();
@@ -98,7 +99,7 @@ public class StreamTest {
   /**
    * flatMap用于将多个流合并成一个流，俗称流的扁平化。
    */
-  public static void flatMapTest () {
+  public static void flatMapTest() {
     list.stream()
         .map(s -> s.split(""))
         .flatMap(Arrays::stream)
@@ -167,7 +168,6 @@ public class StreamTest {
         .reduce(Integer::max)
         .ifPresent(System.out::println);
 
-
     numbers.stream()
         .reduce(Integer::min)
         .ifPresent(System.out::println);
@@ -198,7 +198,8 @@ public class StreamTest {
       wordCout = lines.map(l -> l.split(""))
           .flatMap(Arrays::stream)
           .count();
-    } catch (Exception ignore) {}
+    } catch (Exception ignore) {
+    }
 
     Stream.iterate(0, n -> n + 2)
         .limit(10).forEach(System.out::println);
