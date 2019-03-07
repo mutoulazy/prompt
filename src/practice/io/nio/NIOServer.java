@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * 模拟NIO服务端端
+ * 模拟NIO服务端
  */
 public class NIOServer {
 
